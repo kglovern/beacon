@@ -7,7 +7,6 @@
       <div class="form">
         <LoginForm />
       </div>
-
     </div>
 </template>
 

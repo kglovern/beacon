@@ -56,7 +56,7 @@ input {
     margin-top: 1em;
     a {
     text-decoration: none;
-    color: $primary-alt;
+    color: $highlight;
     font-size: 1em;
     width: 100%;
   }
