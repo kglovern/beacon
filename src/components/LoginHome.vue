@@ -2,9 +2,7 @@
   <transition name="auth">
     <div v-bind:class="{'auth': loginFailed}" id="login-container">
       <LoginHomeHero />
-      <div class="form">
-        <LoginForm @no-auth="toggleFailAnimation"/>
-      </div>
+      <LoginForm @no-auth="toggleFailAnimation"/>
     </div>
   </transition>
 </template>
@@ -40,6 +38,7 @@ export default {
   @extend %box-shadow;
   background: $white;
   display: flex;
+  align-items: center;
   width: 50%;
 }
 

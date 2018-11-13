@@ -1,5 +1,8 @@
 <template>
   <div id="login-form">
+    <div class="status-danger" v-show="authFailed">
+      <p>Your username or password was incorrect</p>
+      </div>
     <h1>Login</h1>
     <div class="field">
       <input name="username" v-model="username" placeholder="Username" />
@@ -19,14 +22,22 @@ export default {
   name: 'LoginForm',
   data: () => ({
     username: '',
-    password: ''
+    password: '',
+    authFailed: false
   }),
   methods: {
+    /**
+     * Login handler - fudged for now but this will eventually call an actual login route
+     * On success: emits has-auth event with token payload
+     * On failure: emits no-auth event
+     */
     login: function () {
       if (this.username === 'root' && this.password === 'root') {
-        console.log('right')
+        // we emit auth notice
+        this.authFailed = false
       } else {
         this.$emit('no-auth')
+        this.authFailed = true
       }
     }
   }
@@ -36,8 +47,8 @@ export default {
 <style scoped lang="scss">
 
 #login-form {
-  padding: 0 0;
-  width: 100%;
+  padding: 0 1em;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
