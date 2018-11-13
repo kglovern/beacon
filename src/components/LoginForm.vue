@@ -2,12 +2,12 @@
   <div id="login-form">
     <h1>Login</h1>
     <div class="field">
-      <input placeholder="Username" />
+      <input name="username" v-model="username" placeholder="Username" />
     </div>
     <div class="field">
-      <input placeholder="Password" type="password" />
+      <input name="password" v-model="password" placeholder="Password" type="password" />
     </div>
-    <button class="login">Sign in</button>
+    <button class="login" v-on:click="login()">Sign in</button>
     <div class="recovery">
       <a href="#">Forgot your username/password?</a>
     </div>
@@ -16,15 +16,33 @@
 
 <script>
 export default {
-  name: 'LoginForm'
+  name: 'LoginForm',
+  data: () => ({
+    username: '',
+    password: ''
+  }),
+  methods: {
+    login () {
+      if (this.username === 'root' && this.password === 'root') {
+        console.log('right')
+      } else {
+        console.log('wrong')
+      }
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 
 #login-form {
-  padding: 2em 0em;
+  padding: 0 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
 }
 
 h1 {
@@ -36,7 +54,6 @@ h1 {
 
 input {
   width: 100%;
-  appearance: none;
   background: transparent;
   border: none;
   padding: 0.75em 0.5em;
@@ -63,9 +80,7 @@ input {
 }
 
 .login {
-    appearance: none;
     padding: 0.5em 2em;
-    border: none;
     color: $primary;
     border: solid 1px $primary;
     background: $white;

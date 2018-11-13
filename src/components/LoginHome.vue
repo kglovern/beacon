@@ -23,23 +23,26 @@ export default {
 
 <style scoped lang="scss">
 #login-container {
+  @extend %box-shadow;
   background: $white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
+  width: 50%;
 }
 
 .form {
-  padding: 0em 8em;
+  padding: 0em 2em;
+  width: 60%;
 }
 
 .hero {
   background: $primary;
   min-height: 60%;
-  padding: 6em 4em;
+  padding: 6em 0em;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 40%;
 
   img {
     width: 100px;
