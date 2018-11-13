@@ -22,11 +22,11 @@ export default {
     password: ''
   }),
   methods: {
-    login () {
+    login: function () {
       if (this.username === 'root' && this.password === 'root') {
         console.log('right')
       } else {
-        console.log('wrong')
+        this.$emit('no-auth')
       }
     }
   }
