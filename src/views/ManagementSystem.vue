@@ -1,7 +1,7 @@
 
 <template>
 <div class="full-size manage">
-  <management-menu-container />
+  <management-menu />
   <div id="main" class="full-size">
     <div id="edit-area">
       <div id="canvas">
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import ManagementMenuContainer from '@/components/ManagementMenuContainer.vue'
+import ManagementMenu from '@/components/ManagementMenu/ManagementMenu.vue'
 
 export default {
   name: 'ManagementSystem',
   components: {
-    ManagementMenuContainer
+    ManagementMenu
   }
 }
 </script>

@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import ManagementMenuHeader from '@/components/ManagementMenuHeader.vue'
-import ManagementMenuCategory from '@/components/ManagementMenuCategory.vue'
-import ManagementMenuItem from '@/components/ManagementMenuItem.vue'
+import ManagementMenuHeader from '@/components/ManagementMenu/ManagementMenuHeader.vue'
+import ManagementMenuCategory from '@/components/ManagementMenu/ManagementMenuCategory.vue'
+import ManagementMenuItem from '@/components/ManagementMenu/ManagementMenuItem.vue'
 
 export default {
-  name: 'ManagementMenuContainer',
+  name: 'ManagementMenu',
   components: {
     ManagementMenuHeader,
     ManagementMenuCategory,
