@@ -2,7 +2,11 @@
   <div id="menu">
     <div id="top-menu">
       <management-menu-header/>
-      <management-menu-category name="Project Settings"></management-menu-category>
+      <management-menu-category name="Project Settings">
+        <management-menu-item>Manage Editors</management-menu-item>
+        <management-menu-item>Remove Project</management-menu-item>
+        <management-menu-item>View Statistics</management-menu-item>
+      </management-menu-category>
       <management-menu-category name="Assets"></management-menu-category>
       <management-menu-category name="Text and Shapes"></management-menu-category>
       <management-menu-category name="Widgets"></management-menu-category>
