@@ -1,8 +1,6 @@
 <template>
   <div id="login-form">
-    <div class="status-danger" v-show="authFailed">
-      <p>Your username or password was incorrect</p>
-      </div>
+    <Alert v-show="authFailed" alertType="danger">Your username or password is incorrect!</Alert>
     <h1>Login</h1>
     <div class="field">
       <input name="username" v-model="username" placeholder="Username" />
@@ -20,11 +18,13 @@
 
 <script>
 import FullScreenModal from '@/components/FullScreenModal.vue'
+import Alert from '@/components/Alert.vue'
 
 export default {
   name: 'LoginForm',
   components: {
-    FullScreenModal
+    FullScreenModal,
+    Alert
   },
   data: () => ({
     username: '',
