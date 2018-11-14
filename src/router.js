@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HomePage from './views/HomePage.vue'
+import LoginPage from './views/LoginPage.vue'
 import ManagementSystem from './views/ManagementSystem.vue'
 import Client from './views/Client.vue'
 
@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomePage
+      name: 'login',
+      component: LoginPage
     },
     {
       path: '/manage',
