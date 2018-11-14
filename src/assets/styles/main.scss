@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    font-family:  'Avenir', sans-serif;
+    font-family: 'Avenir', sans-serif;
     background: $grey;
     color: $dark;
     -webkit-font-smoothing: antialiased;
@@ -23,14 +23,24 @@ body {
 @mixin status-alert($colour) {
     background: lighten($colour, 40%);
     padding: 0.2em 0em;
-    color: $colour;
+    color: darken($colour, 10%);
     border: solid 1px lighten($colour, 20%);
     text-align: center;
     width: 100%;
+
     p {
         padding: 0em 1em;
     }
 }
+
 .status-danger {
     @include status-alert($status-danger);
+}
+
+.status-warning {
+    @include status-alert($status-warning);
+}
+
+.status-ok {
+    @include status-alert($status-ok);
 }

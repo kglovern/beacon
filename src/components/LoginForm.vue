@@ -12,18 +12,25 @@
     </div>
     <button class="login" v-on:click="login()">Sign in</button>
     <div class="recovery">
-      <a href="#">Forgot your username/password?</a>
+      <a @click="recoverPassword=false">Forgot your username/password?</a>
     </div>
+    <full-screen-modal v-if="recoverPassword"/>
   </div>
 </template>
 
 <script>
+import FullScreenModal from '@/components/FullScreenModal.vue'
+
 export default {
   name: 'LoginForm',
+  components: {
+    FullScreenModal
+  },
   data: () => ({
     username: '',
     password: '',
-    authFailed: false
+    authFailed: false,
+    recoverPassword: false
   }),
   methods: {
     /**
