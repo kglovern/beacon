@@ -41,6 +41,7 @@ export default {
     login: function () {
       if (this.username === 'root' && this.password === 'root') {
         // we emit auth notice
+        this.$emit('auth')
         this.authFailed = false
       } else {
         this.$emit('no-auth')
