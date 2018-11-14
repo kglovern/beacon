@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="project-page-container">
         <projects-home />
     </div>
 </template>
@@ -16,6 +16,12 @@ export default {
 </script>
 
 <style lang="scss">
-
+  #project-page-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient($primary-dark, $primary-darkest);
+    background-size: cover;
+    position: absolute;
+  }
 </style>
 
