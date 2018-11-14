@@ -7,9 +7,15 @@
         <management-menu-item>Remove Project</management-menu-item>
         <management-menu-item>View Statistics</management-menu-item>
       </management-menu-category>
-      <management-menu-category name="Assets"></management-menu-category>
-      <management-menu-category name="Text and Shapes"></management-menu-category>
-      <management-menu-category name="Widgets"></management-menu-category>
+      <management-menu-category name="Assets">
+        ASSET WINDOW COMPONENT GOES HERE
+      </management-menu-category>
+      <management-menu-category name="Text and Shapes">
+        SHAPE MENU COMPONENT GOES HERE
+      </management-menu-category>
+      <management-menu-category name="Widgets">
+        WIDGET MENU COMPONENT GOES HERE
+      </management-menu-category>
     </div>
     <div id="bottom-menu">
       <a href="">bottom</a>
