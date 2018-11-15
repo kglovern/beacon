@@ -8,7 +8,7 @@
         <management-menu-item>View Statistics</management-menu-item>
       </management-menu-category>
       <management-menu-category name="Assets">
-        ASSET WINDOW COMPONENT GOES HERE
+        <asset-menu />
       </management-menu-category>
       <management-menu-category name="Text and Shapes">
         SHAPE MENU COMPONENT GOES HERE
@@ -18,7 +18,7 @@
       </management-menu-category>
     </div>
     <div id="bottom-menu">
-      <a href="">bottom</a>
+      <a href="">I'm probably a logout button</a>
     </div>
   </div>
 </template>
@@ -27,13 +27,15 @@
 import ManagementMenuHeader from '@/components/ManagementMenu/ManagementMenuHeader.vue'
 import ManagementMenuCategory from '@/components/ManagementMenu/ManagementMenuCategory.vue'
 import ManagementMenuItem from '@/components/ManagementMenu/ManagementMenuItem.vue'
+import AssetMenu from '@/components/AssetMenu/AssetMenu.vue'
 
 export default {
   name: 'ManagementMenu',
   components: {
     ManagementMenuHeader,
     ManagementMenuCategory,
-    ManagementMenuItem
+    ManagementMenuItem,
+    AssetMenu
   }
 }
 </script>
