@@ -4,6 +4,7 @@ import ProjectsPage from './views/ProjectsPage.vue'
 import LoginPage from './views/LoginPage.vue'
 import ManagementSystem from './views/ManagementSystem.vue'
 import Client from './views/Client.vue'
+import Library from '@/views/Library.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/client',
       name: 'client',
       component: Client
+    },
+    {
+      path: '/library',
+      name: 'library',
+      component: Library
     }
   ]
 })
