@@ -1,6 +1,7 @@
 <template>
   <!-- Dummy projects in place of real projects -->
   <div id="projects-container">
+    <general-project><add-project/></general-project>
     <general-project>Project 1</general-project>
     <general-project>Project 2</general-project>
     <general-project>Project 3</general-project>
@@ -18,6 +19,7 @@
 
 <script>
 import GeneralProject from '@/components/GeneralProject.vue'
+import AddProject from '@/components/AddProject.vue'
 
 export default {
   name: 'ProjectContainer',
@@ -28,7 +30,8 @@ export default {
     }
   },
   components: {
-    GeneralProject
+    GeneralProject,
+    AddProject
   },
   methods: {}
 }
