@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nested-search />
+    <nested-search placeholder="Asset Name"/>
     <asset-listings />
   </div>
 </template>
