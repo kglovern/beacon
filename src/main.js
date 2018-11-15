@@ -5,6 +5,8 @@ import store from './store'
 
 // CSS Reset library
 import '../node_modules/normalizecss/normalize.css'
+// Animate.css import
+import '../node_modules/animate.css/animate.min.css'
 
 Vue.config.productionTip = false
 

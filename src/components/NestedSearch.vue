@@ -34,7 +34,7 @@ button {
   flex-shrink: 0;
   border: transparent;
   background: $primary;
-  color: $white;
+  color: $dark;
   border-radius: 1em;
   padding: 0.3em 0.6em;
   margin-right: 0.5em;
@@ -47,7 +47,7 @@ input {
   appearance: none;
   background: transparent;
   margin-right: 0.75em;
-  color: $primary-alt;
+  color: $dark;
 
   &:focus {
     outline: none;

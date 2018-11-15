@@ -3,11 +3,15 @@
     <div class="menu-heading">
       <a href="" @click.stop.prevent="toggledOpen = !toggledOpen" class="header">{{name}}</a>
     </div>
-    <transition name="slide-in">
-      <div v-if="toggledOpen" class="menu-accordion">
-        <slot></slot>
-      </div>
-    </transition>
+    <div class="menu-accordion">
+      <transition
+        name="custom-classes-transition"
+        enter-active-class="animated zoomInLeft faster"
+        leave-active-class="animated zoomOutLeft faster"
+      >
+        <slot v-if="toggledOpen"></slot>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -52,14 +56,15 @@ h3 {
 // Animation code
 
 .slide-in-enter-active {
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
 .slide-in-leave-active {
-  transition: all .4s; //cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.4s; //cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 
-.slide-in-enter, .slide-in-leave-to {
+.slide-in-enter,
+.slide-in-leave-to {
   transform: translateY(-5px);
   opacity: 0;
 }
