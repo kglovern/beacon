@@ -1,28 +1,26 @@
 <template>
-  <div id="login-screen">
-    <LoginHome />
-  </div>
+    <div id="project-page-container">
+        <projects-home />
+    </div>
 </template>
 
 <script>
-import LoginHome from '@/components/LoginHome.vue'
+import ProjectsHome from '@/components/ProjectsHome.vue'
 
 export default {
-  name: 'HomePage',
+  name: 'ProjectsPage',
   components: {
-    LoginHome
+    ProjectsHome
   }
 }
 </script>
 
 <style lang="scss">
-#login-screen {
-  background-image: linear-gradient($primary-dark, $primary-darkest);
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $dark;
-}
+  #project-page-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient($primary-dark, $primary-darkest);
+    background-size: cover;
+    position: absolute;
+  }
 </style>
