@@ -14,8 +14,6 @@ export default {
   name: 'ProjectContainer',
   data: function () {
     return {
-      projectClicked: false,
-      projectUnclicked: true,
       projects: [
         {
           id: '1',

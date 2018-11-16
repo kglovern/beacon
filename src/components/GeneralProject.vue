@@ -1,9 +1,10 @@
 <template>
   <div>
     <div id="project">
-      <button id="gen-project" class="btn">
+      <div id="gen-project" @focus="clickProject">
         <slot></slot>
-      </button>
+        <div id="open-project" v-show="projectClicked">open</div>
+      </div>
     </div>
   </div>
 </template>
@@ -12,13 +13,28 @@
 export default {
   name: 'GeneralProject',
   data: () => ({
-    displayMessage: false
+    displayMessage: false,
+    projectClicked: false
   }),
-  methods: {}
+  methods: {
+    clickProject () {
+      this.projectClicked = true
+    }
+  }
 }
 </script>
 
 <style>
+#gen-project {
+  text-align: center;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width: 250px;
+  height: 150px;
+}
 #gen-project {
   text-align: center;
   background-color: white;
