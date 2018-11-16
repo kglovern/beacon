@@ -6,7 +6,6 @@
         <div id="open-project" v-show="projectClicked">open</div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
