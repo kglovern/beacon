@@ -2,18 +2,7 @@
   <!-- Dummy projects in place of real projects -->
   <div id="projects-container">
     <general-project><add-project/></general-project>
-    <general-project>Project 1</general-project>
-    <general-project>Project 2</general-project>
-    <general-project>Project 3</general-project>
-    <general-project>Project 4</general-project>
-    <general-project>Project 5</general-project>
-    <general-project>Project 6</general-project>
-    <general-project>Project 7</general-project>
-    <general-project>Project 8</general-project>
-    <general-project>Project 9</general-project>
-    <general-project>Project 10</general-project>
-    <general-project>Project 11</general-project>
-    <general-project>Project 12</general-project>
+    <general-project v-for="project in projects" :key="project.id">{{project.name}}</general-project>
   </div>
 </template>
 
@@ -26,7 +15,21 @@ export default {
   data: function () {
     return {
       projectClicked: false,
-      projectUnclicked: true
+      projectUnclicked: true,
+      projects: [
+        {
+          id: '1',
+          name: 'Project 1'
+        },
+        {
+          id: '2',
+          name: 'My cool Project'
+        },
+        {
+          id: '3',
+          name: 'Route 66'
+        }
+      ]
     }
   },
   components: {
