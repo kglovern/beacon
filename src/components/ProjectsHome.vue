@@ -4,13 +4,16 @@
     <div id="project-header">
       <h1>Projects</h1>
     </div>
-    <input id="project-search-bar" type="text" placeholder="Search Projects...">
+    <div id="project-search-bar">
+      <NestedSearch/>
+    </div>
     <project-container></project-container>
   </div>
 </template>
 
 <script>
 import ProjectContainer from '@/components/ProjectContainer.vue'
+import NestedSearch from '@/components/NestedSearch.vue'
 
 export default {
   name: 'ProjectsHome',
@@ -21,7 +24,8 @@ export default {
     }
   },
   components: {
-    ProjectContainer
+    ProjectContainer,
+    NestedSearch
   },
   methods: {}
 }
@@ -29,18 +33,12 @@ export default {
 
 <style lang="scss">
 #project-header {
-  margin-left: 1vw;
+  //margin-left: 1vw;
+  padding: 2em
 }
 #project-search-bar {
-  margin-left: 1vw;
-  top: 3px;
-  left: 5px;
-  height: 30px;
-  width: 200px;
-  border-radius: 10px;
-  padding-left: 10px;
-  border-style: ridge;
-  margin-bottom: 20px;
+  width: 25%;
+  padding: 2em
 }
 #project-search-container {
   margin-left: 100px;

@@ -13,6 +13,6 @@ export default {
 
 <style lang="scss">
 #add-project {
-  font-size: 5vw
+  font-size: 5vw;
 }
 </style>
