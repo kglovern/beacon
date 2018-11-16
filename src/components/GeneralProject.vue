@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <div id="project">
-      <button id="gen-project" class="btn">
-        <slot></slot>
-      </button>
+    <div class="project-card">
+        <h2><slot></slot></h2>
     </div>
-  </div>
 </template>
 
 <script>
@@ -18,19 +14,28 @@ export default {
 }
 </script>
 
-<style>
-#gen-project {
-  text-align: center;
-  background-color: white;
-  color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
-  width: 250px;
-  height: 150px;
-}
-#project {
-  margin: 1vw;
-  width: 66%;
+<style lang="scss">
+.project-card {
+  @extend %box-shadow;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  max-height: 35%;
+  background: $white;
+  padding: 0em 1em;
+  border-radius: 1em;
+
+  &:hover {
+    cursor: pointer;
+    transform:scale(1.1,1.1);
+  }
+
+  h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+  }
 }
 </style>

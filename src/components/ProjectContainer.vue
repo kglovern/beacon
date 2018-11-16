@@ -44,10 +44,11 @@ export default {
 #projects-container {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  justify-content: space-between;
   overflow-y: scroll;
   height: 70vh;
   max-width: 85vw;
   margin-top: 10px;
+  padding: 2em;
 }
 </style>
