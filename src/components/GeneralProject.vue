@@ -1,9 +1,10 @@
 
 <template>
-  <div class="project-card">
+  <div  @click="clickProject" class="project-card">
     <h2>
       <slot></slot>
     </h2>
+    <div class="open-div" v-bind:class="{ hiddenDiv: isActive }">Open</div>
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 export default {
   name: 'GeneralProject',
   data: () => ({
-    displayMessage: false,
-    projectClicked: false
+    isActive: true
   }),
   methods: {
-    clickProject () {
-      this.projectClicked = true
+    clickProject: function () {
+      // console.log(this.$el.childNodes[1])
+      this.$parent.$children.isActive = true
+      this.isActive = false
+      // console.log(this.$parent.$children)
     }
   }
 }
@@ -25,6 +28,7 @@ export default {
 <style lang="scss">
 .project-card {
   @extend %box-shadow;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,5 +46,12 @@ export default {
     font-size: 1.2em;
     font-weight: normal;
   }
+}
+.open-div {
+  position: absolute;
+  bottom: 2%;
+}
+.hiddenDiv {
+  display: none;
 }
 </style>

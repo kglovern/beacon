@@ -18,10 +18,7 @@ import NestedSearch from '@/components/NestedSearch.vue'
 export default {
   name: 'ProjectsHome',
   data: function () {
-    return {
-      projectClicked: false,
-      projectUnclicked: true
-    }
+    return {}
   },
   components: {
     ProjectContainer,
