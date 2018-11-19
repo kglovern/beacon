@@ -4,7 +4,9 @@
     <h2>
       <slot></slot>
     </h2>
-    <div class="open-div" v-bind:class="{ hiddenDiv: isActive }">Open</div>
+    <div class="open-div" v-bind:class="{ hiddenDiv: isActive }">
+      <div class="open-text">Open</div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +22,9 @@ export default {
       this.$parent.$children.isActive = true
       this.isActive = false
       // console.log(this.$parent.$children)
+      setTimeout(() => {
+        this.isActive = true
+      }, 2000)
     }
   }
 }
@@ -49,7 +54,16 @@ export default {
 }
 .open-div {
   position: absolute;
-  bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+.open-text {
+  color: $white;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
 }
 .hiddenDiv {
   display: none;
