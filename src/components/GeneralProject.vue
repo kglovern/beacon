@@ -43,6 +43,7 @@ export default {
   background: $white;
   padding: 0em 1em;
   border-radius: 1em;
+  margin: 1%;
   &:hover {
     cursor: pointer;
     transform: scale(1.1, 1.1);

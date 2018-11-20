@@ -30,15 +30,20 @@ export default {
 
 <style lang="scss">
 #project-header {
-  //margin-left: 1vw;
-  padding: 2em
+  margin: none;
+  padding: 2em;
+  padding-left: 3em;
 }
 #project-search-bar {
   width: 25%;
-  padding: 2em
+  padding: 2em;
+  padding-left: 2.5em;
 }
 #project-search-container {
-  margin-left: 100px;
+  margin: auto;
+  padding-left: 2em;
+  height: 50%;
+  justify-content: space-between;
 }
 input:focus {
   outline: none;

@@ -17,10 +17,10 @@ export default {
 
 <style lang="scss">
   #project-page-container {
+    position: absolute;
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient($primary-dark, $primary-darkest);
     background-size: cover;
-    position: absolute;
   }
 </style>
