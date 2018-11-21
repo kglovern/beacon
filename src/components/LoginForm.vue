@@ -8,7 +8,7 @@
     <div class="field">
       <input name="password" v-model="password" placeholder="Password" type="password">
     </div>
-    <button class="login" v-on:click="login()">Sign in</button>
+    <button type="submit" class="login" v-on:click="login()">Sign in</button>
     <div class="recovery">
       <a>Forgot your username/password?</a>
     </div>
