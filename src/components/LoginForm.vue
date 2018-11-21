@@ -58,6 +58,8 @@ export default {
         })
         .catch(err => {
           console.log(err)
+          this.$emit('no-auth')
+          this.authFailed = true
         })
       /* if (this.username === 'root' && this.password === 'root') {
         // we emit auth notice
