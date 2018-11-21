@@ -18,24 +18,24 @@ export default {
 </script>
 
 <style lang="scss">
-  #modal-main {
+#modal-main {
   position: relative;
-  min-width: 30vw;
+  min-width: 50vw;
   height: 50vh;
   z-index: 101;
   background: $dark-light;
   border-radius: 10px;
   overflow: hidden;
   color: $white;
-  }
-  #modal-header-bar {
-    width: 100%;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background: $dark;
-  }
-  #modal-content-box {
-    padding: 10px;
-  }
+}
+#modal-header-bar {
+  width: 100%;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: $dark;
+}
+#modal-content-box {
+  padding: 10px;
+}
 </style>

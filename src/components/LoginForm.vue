@@ -10,21 +10,18 @@
     </div>
     <button class="login" v-on:click="login()">Sign in</button>
     <div class="recovery">
-      <a @click="recoverPassword=false">Forgot your username/password?</a>
+      <a>Forgot your username/password?</a>
     </div>
-    <full-screen-modal v-if="recoverPassword"/>
   </div>
 </template>
 
 <script>
-import FullScreenModal from '@/components/FullScreenModal.vue'
 import Alert from '@/components/Alert.vue'
 import { API } from '@/api'
 
 export default {
   name: 'LoginForm',
   components: {
-    FullScreenModal,
     Alert
   },
   data: () => ({
@@ -55,7 +52,7 @@ export default {
           }
         })
         .catch(err => {
-          this.$emit('no-auth')
+          this.$emit('no-auth', err)
           this.authFailed = true
         })
       /* if (this.username === 'root' && this.password === 'root') {

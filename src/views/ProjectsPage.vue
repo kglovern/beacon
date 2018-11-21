@@ -20,7 +20,6 @@ export default {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient($primary-dark, $primary-darkest);
-    background-size: cover;
+    background: linear-gradient($primary-dark, $primary-darkest);
   }
 </style>

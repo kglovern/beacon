@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="blurred-background">
+    <div class="blurred-background">
         <slot></slot>
     </div>
   </div>
@@ -8,12 +8,12 @@
 
 <script>
 export default {
-  name: 'BlurBackdrop'
+  name: 'FullScreenModal'
 }
 </script>
 
 <style lang="scss">
-  #blurred-background {
+  .blurred-background {
   position: absolute;
   display: flex;
   justify-content: center;

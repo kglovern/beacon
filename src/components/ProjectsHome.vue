@@ -1,9 +1,7 @@
 <template>
   <!-- Dummy projects in place of real projects -->
   <div id="project-search-container">
-    <blur-backdrop>
-      <new-project-modal/>
-    </blur-backdrop>
+    <new-project-modal/>
     <div id="project-header">
       <h1>Projects</h1>
     </div>
@@ -17,7 +15,6 @@
 <script>
 import ProjectContainer from '@/components/ProjectContainer.vue'
 import NestedSearch from '@/components/NestedSearch.vue'
-import BlurBackdrop from '@/components/BlurBackdrop.vue'
 import NewProjectModal from '@/components/Modal/NewProjectModal.vue'
 
 export default {
@@ -28,7 +25,6 @@ export default {
   components: {
     ProjectContainer,
     NestedSearch,
-    BlurBackdrop,
     NewProjectModal
   },
   methods: {}
