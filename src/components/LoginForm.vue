@@ -3,10 +3,10 @@
     <Alert v-show="authFailed" alertType="danger">Your username or password is incorrect!</Alert>
     <h1>Login</h1>
     <div class="field">
-      <input name="username" v-model="username" placeholder="Username" />
+      <input name="username" v-model="username" placeholder="Username">
     </div>
     <div class="field">
-      <input name="password" v-model="password" placeholder="Password" type="password" />
+      <input name="password" v-model="password" placeholder="Password" type="password">
     </div>
     <button class="login" v-on:click="login()">Sign in</button>
     <div class="recovery">
@@ -19,6 +19,7 @@
 <script>
 import FullScreenModal from '@/components/FullScreenModal.vue'
 import Alert from '@/components/Alert.vue'
+import { API } from '@/api'
 
 export default {
   name: 'LoginForm',
@@ -39,21 +40,37 @@ export default {
      * On failure: emits no-auth event
      */
     login: function () {
-      if (this.username === 'root' && this.password === 'root') {
+      API.post('login', {
+        username: this.username,
+        password: this.password
+      })
+        .then(response => {
+          if (response.data && response.data.token) {
+            console.log(response.data.token)
+            this.$emit('auth')
+            this.authFailed = false
+            this.$router.push('/projects')
+          } else {
+            this.$emit('no-auth')
+            this.authFailed = true
+          }
+          console.log(response.data.token)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      /* if (this.username === 'root' && this.password === 'root') {
         // we emit auth notice
-        this.$emit('auth')
-        this.authFailed = false
+
       } else {
-        this.$emit('no-auth')
-        this.authFailed = true
-      }
+
+      } */
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-
 #login-form {
   padding: 0 1em;
   width: 60%;
@@ -68,7 +85,6 @@ h1 {
   color: $primary-lightest;
   font-size: 1em;
   text-decoration: none;
-
 }
 
 input {
@@ -88,9 +104,9 @@ input {
 }
 
 .recovery {
-    padding-top: 1em;
-    margin-top: 1em;
-    a {
+  padding-top: 1em;
+  margin-top: 1em;
+  a {
     text-decoration: none;
     color: $highlight;
     font-size: 1em;
@@ -99,15 +115,15 @@ input {
 }
 
 .login {
-    padding: 0.5em 2em;
-    color: $primary;
-    border: solid 1px $primary;
-    background: $white;
-    border-radius: 2em;
+  padding: 0.5em 2em;
+  color: $primary;
+  border: solid 1px $primary;
+  background: $white;
+  border-radius: 2em;
 
-    &:hover {
-      background: $primary;
-      color: $white;
-    }
+  &:hover {
+    background: $primary;
+    color: $white;
   }
+}
 </style>

@@ -15,8 +15,8 @@ export default new Vuex.Store({
     jwtIssuer: (state, getters) => getters.jwtData ? getters.jwtData.iss : null
   },
   mutations: {
-    setJWT(state, jwt) {
-      state.JWT = jwt;
+    setJWT (state, jwt) {
+      state.JWT = jwt
     }
   },
   actions: {
