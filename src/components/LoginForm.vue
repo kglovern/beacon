@@ -46,7 +46,6 @@ export default {
       })
         .then(response => {
           if (response.data && response.data.token) {
-            console.log(response.data.token)
             this.$emit('auth')
             this.authFailed = false
             this.$router.push('/projects')
@@ -54,10 +53,8 @@ export default {
             this.$emit('no-auth')
             this.authFailed = true
           }
-          console.log(response.data.token)
         })
         .catch(err => {
-          console.log(err)
           this.$emit('no-auth')
           this.authFailed = true
         })
