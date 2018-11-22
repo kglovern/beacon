@@ -1,7 +1,7 @@
 <template>
   <!-- Dummy projects in place of real projects -->
   <div id="project-search-container">
-    <blur-backdrop>
+    <blur-backdrop id="new-project-modal">
       <new-project-modal/>
     </blur-backdrop>
     <div id="project-header">
@@ -49,10 +49,13 @@ export default {
 #project-search-container {
   margin: auto;
   padding-left: 2em;
-  height: 50%;
+  height: 100vh;
   justify-content: space-between;
 }
 input:focus {
   outline: none;
+}
+#new-project-modal {
+  display: none;
 }
 </style>

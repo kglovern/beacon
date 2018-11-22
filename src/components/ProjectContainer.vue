@@ -144,6 +144,7 @@ export default {
   overflow-y: scroll;
   height: 100%;
   max-width: 85vw;
+  height: 100%;
   margin-top: 10px;
   padding: 2em;
 }

@@ -18,7 +18,7 @@ export default {
 <style lang="scss">
   #project-page-container {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-image: linear-gradient($primary-dark, $primary-darkest);
     background-size: cover;
