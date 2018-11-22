@@ -2,16 +2,18 @@
   <div id="login-form">
     <Alert v-show="authFailed" alertType="danger">Your username or password is incorrect!</Alert>
     <h1>Login</h1>
-    <div class="field">
-      <input name="username" v-model="username" placeholder="Username">
-    </div>
-    <div class="field">
-      <input name="password" v-model="password" placeholder="Password" type="password">
-    </div>
-    <button type="submit" class="login" v-on:click="login()">Sign in</button>
-    <div class="recovery">
-      <a>Forgot your username/password?</a>
-    </div>
+    <form @submit.prevent.stop="login()">
+      <div class="field">
+        <input name="username" v-model="username" placeholder="Username">
+      </div>
+      <div class="field">
+        <input name="password" v-model="password" placeholder="Password" type="password">
+      </div>
+      <button type="submit" class="login" v-on:click="login()">Sign in</button>
+      <div class="recovery">
+        <a>Forgot your username/password?</a>
+      </div>
+    </form>
   </div>
 </template>
 
