@@ -7,6 +7,7 @@
 </template>
 
 <style lang="scss">
+
 @for $i from 1 through 5 {
   $enter-delay: 200ms;
 

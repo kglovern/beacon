@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ProjectsPage from './views/ProjectsPage.vue'
+import Projects from './views/Projects.vue'
 import LoginPage from './views/LoginPage.vue'
 import ManagementSystem from './views/ManagementSystem.vue'
 import Client from './views/Client.vue'
@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/projects',
       name: 'projects',
-      component: ProjectsPage
+      component: Projects
     },
     {
       path: '/',

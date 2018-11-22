@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 
 .bounding {
   padding: 1em 0.25em;
@@ -27,6 +27,7 @@ export default {
   background: $white;
   border-radius: 1em;
   width: 100%;
+  border: solid 1px $primary;
 }
 
 button {
