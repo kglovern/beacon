@@ -54,6 +54,6 @@ input:focus {
   outline: none;
 }
 #new-project-modal {
-  display: none;
+  // display: none;
 }
 </style>

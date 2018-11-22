@@ -19,8 +19,11 @@ export default {
 
 <style lang="scss">
 #modal-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   position: relative;
-  min-width: 50vw;
+  min-width: 30vw;
   height: 50vh;
   z-index: 101;
   background: $dark-light;
@@ -36,6 +39,11 @@ export default {
   background: $dark;
 }
 #modal-content-box {
+  flex-grow: 1;
+  display: flex;
+  border-style: none;
+  border-color: red;
   padding: 10px;
+  padding-bottom: 15px;
 }
 </style>
