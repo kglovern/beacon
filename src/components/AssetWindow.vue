@@ -23,6 +23,14 @@ export default {
         {
           id: '3',
           name: 'Hurray.jpg'
+        },
+        {
+          id: '4',
+          name: 'Hurray.jpg'
+        },
+        {
+          id: '5',
+          name: 'Hurray.jpg'
         }
       ]
     }
@@ -39,7 +47,7 @@ export default {
 #a-wind {
   background: $white;
   width: 95%;
-  height: 100px;
+  max-height: 100px;
   overflow-y: scroll;
   color: black;
 }

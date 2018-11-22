@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style>
-#this{
+#this {
   padding: 1.2em 1.2em;
 }
 </style>

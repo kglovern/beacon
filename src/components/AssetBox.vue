@@ -15,10 +15,8 @@ export default {
 <style lang="scss">
 #a-box {
   color: black;
-  border-radius: 0.5px;
-  border-style: solid;
+  border-style: inset;
   border-color: $primary;
-  height: 30%;
 }
 
 </style>
