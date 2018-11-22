@@ -1,11 +1,10 @@
 <template>
-<div id="a-box">
-<slot></slot>
-</div>
+  <div id="a-box">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
-
 
 export default {
   name: 'AssetBox'

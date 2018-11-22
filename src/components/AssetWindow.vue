@@ -1,7 +1,7 @@
 <template>
-<div id="a-wind">
-  <asset-box v-for="asset in assets" :key="asset.id">{{asset.name}}</asset-box>
-</div>
+  <div id="a-wind">
+    <asset-box v-for="asset in assets" :key="asset.id">{{asset.name}}</asset-box>
+  </div>
 </template>
 
 <script>
@@ -21,16 +21,16 @@ export default {
           name: 'My cool Project.jpg'
         },
         {
-          id: '2',
+          id: '3',
           name: 'Hurray.jpg'
         }
       ]
     }
   },
-components: {
-  AssetBox,
-},
-methods: {}
+  components: {
+    AssetBox
+  },
+  methods: {}
 }
 
 </script>
