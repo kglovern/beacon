@@ -3,11 +3,11 @@
     <div class="project-container">
       <div class="full-width project-listings">
         <div class="create-container">
-          <div id="header">Projects</div>
+          <project-hero />
           <icon-button-dark>Create Project</icon-button-dark>
-          <nested-search />
+          <nested-search placeholder="Search Projects"/>
         </div>
-        <div class="available">
+        <div class="available-container">
           <available-projects />
         </div>
       </div>
@@ -19,13 +19,15 @@
 import NestedSearch from '@/components/NestedSearch.vue'
 import IconButtonDark from '@/components/IconButtonDark.vue'
 import AvailableProjects from '@/components/ProjectListing/AvailableProjects.vue'
+import ProjectHero from '@/components/ProjectListing/ProjectHero.vue'
 
 export default {
   name: 'ProjectsPage',
   components: {
     NestedSearch,
     IconButtonDark,
-    AvailableProjects
+    AvailableProjects,
+    ProjectHero
   }
 }
 </script>
@@ -56,13 +58,13 @@ export default {
 .project-container {
   @extend %box-shadow;
   background: $white;
-  width: 70%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 
 }
 
-.available {
+.available-container {
   width: 70%;
 }
 .create-container {

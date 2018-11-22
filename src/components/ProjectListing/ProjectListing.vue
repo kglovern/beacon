@@ -44,6 +44,7 @@ export default {
   display: flex;
   justify-content: space-between;
   font-size: 0.8em;
+  color: $dark !important;
 
   h3 {
     margin: 0.3em 0 0.5em 0;
@@ -82,7 +83,7 @@ export default {
 }
 .slide-fade-enter, .slide-fade-leave-to
 {
-  transform: translateX(10px);
+  transform: translateX(5px);
   opacity: 0;
 }
 </style>

@@ -1,6 +1,11 @@
 <template>
   <div class="container">
     <project-listing />
+    <project-listing />
+    <project-listing />
+    <project-listing />
+    <project-listing />
+    <project-listing />
   </div>
 </template>
 
