@@ -18,6 +18,7 @@ export default {
     width: 100%;
     padding: 1em;
     font-weight: bold;
+    text-align: left;
 
     &:hover {
       background: darken($dark, 5%);

@@ -1,20 +1,20 @@
 <template>
   <div @mouseover="hovered=true" @mouseout="hovered=false" class="listing">
     <div class="info">
-      <h3>A sample Project</h3>
+      <h3>{{name}}</h3>
       <table>
         <tbody>
           <tr>
             <th>Last Modified</th>
-            <td>11/12/18</td>
+            <td>{{lastModified | localDate}}</td>
           </tr>
           <tr>
             <th># of Frames</th>
-            <td>4</td>
+            <td>-</td>
           </tr>
           <tr>
             <th>Role</th>
-            <td>Editor</td>
+            <td>{{getRole}}</td>
           </tr>
         </tbody>
       </table>
@@ -32,6 +32,17 @@ export default {
     return {
       hovered: false
     }
+  },
+  props: {
+    name: String,
+    lastModified: Date,
+    frames: Number,
+    role: Number
+  },
+  computed: {
+    getRole () {
+      return (this.role === 6) ? 'Owner' : 'Editor'
+    }
   }
 }
 </script>
@@ -44,17 +55,22 @@ export default {
   display: flex;
   justify-content: space-between;
   font-size: 0.8em;
-  color: $dark !important;
 
   h3 {
     margin: 0.3em 0 0.5em 0;
     padding: 0 0 0 1em;
-
   }
 
   table {
+    color: $dark;
+    font-size: 0.8em;
+    margin-left: 1.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+
     th {
       text-align: left;
+      width: 30%;
     }
   }
 
@@ -74,6 +90,9 @@ export default {
   background: $dark;
   font-weight: bold;
 }
+.info {
+  width: 83%;
+}
 
 .slide-fade-enter-active {
   transition: all 0.2s ease;
@@ -81,8 +100,8 @@ export default {
 .slide-fade-leave-active {
   transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.slide-fade-enter, .slide-fade-leave-to
-{
+.slide-fade-enter,
+.slide-fade-leave-to {
   transform: translateX(5px);
   opacity: 0;
 }

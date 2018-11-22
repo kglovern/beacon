@@ -22,6 +22,7 @@ export default {
   h2 {
     border-bottom: solid 1px $primary-alt;
     margin: 0;
+    padding: 1em 0.5em;
   }
 }
 </style>

@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #project-page {
   display: flex;
   justify-content: center;
@@ -61,6 +61,7 @@ export default {
   width: 50%;
   display: flex;
   flex-direction: column;
+  max-height: 50%;
 
 }
 
