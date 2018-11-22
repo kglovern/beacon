@@ -10,7 +10,7 @@ export default new Vuex.Store({
     userId: -1
   },
   getters: {
-    JWT: localStorage.getItem('token') || '',
+    JWT: (state) => localStorage.getItem('token') || '',
     jwtData: (state, getters) => state.JWT ? JSON.parse(atob(getters.JWT.split('.')[1])) : null,
     jwtSubject: (state, getters) => getters.jwtData ? getters.jwtData.sub : null,
     jwtIssuer: (state, getters) => getters.jwtData ? getters.jwtData.iss : null,
