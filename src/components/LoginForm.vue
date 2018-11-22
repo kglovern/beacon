@@ -18,6 +18,7 @@
 </template>
 
 <script>
+// import store from '@/store'
 import Alert from '@/components/Alert.vue'
 import { API } from '@/api'
 
@@ -39,14 +40,14 @@ export default {
      * On failure: emits no-auth event
      */
     login: function () {
-      API.post('login', {
-        username: this.username,
-        password: this.password
-      })
+      API.post('login',
+        {
+          username: this.username,
+          password: this.password
+        })
         .then(response => {
           if (response.data && response.data.token) {
-            this.$emit('auth')
-            this.authFailed = false
+            this.$store.dispatch('loginInit', response.data.id, response.data.token)
             this.$router.push('/projects')
           } else {
             this.$emit('no-auth')
@@ -57,12 +58,6 @@ export default {
           this.$emit('no-auth', err)
           this.authFailed = true
         })
-      /* if (this.username === 'root' && this.password === 'root') {
-        // we emit auth notice
-
-      } else {
-
-      } */
     }
   }
 }
@@ -92,6 +87,10 @@ input {
   padding: 0.75em 0.5em;
 }
 
+form {
+  width: 100%;
+}
+
 .field {
   border-bottom: solid 1px $primary-lightest;
   margin-bottom: 1em;
@@ -118,7 +117,6 @@ input {
   border: solid 1px $primary;
   background: $white;
   border-radius: 2em;
-
   &:hover {
     background: $primary;
     color: $white;
