@@ -31,7 +31,7 @@ export default {
 
 #edit-area {
   background: darken($grey, 20%);
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <img src="@/assets/images/logo.png" alt="Logo">
+    <img src="@/assets/images/logoAlt.png" alt="Logo">
     <h1>Beacon</h1>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 <style lang="scss">
 
 .hero {
-  background: $primary;
+  background: $dark;
   min-height: 60%;
   padding: 6em 0em;
   display: flex;
@@ -28,7 +28,7 @@ export default {
   }
 
   h1 {
-    color: $dark;
+    color: $white;
     font-weight: normal;
   }
 }

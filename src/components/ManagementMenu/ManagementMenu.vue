@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
 #menu {
   width: 25%;
-  height: 100%;
+  min-height: 100%;
   background: $dark;
   color: $primary-alt;
   display: flex;
