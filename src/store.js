@@ -7,14 +7,16 @@ export default new Vuex.Store({
   state: {
     projects: [],
     JWT: '',
-    userId: -1
+    userId: -1,
+    projectId: -1
   },
   getters: {
     JWT: state => localStorage.getItem('token') || '',
     jwtData: (state, getters) => state.JWT ? JSON.parse(atob(getters.JWT.split('.')[1])) : null,
     jwtSubject: (state, getters) => getters.jwtData ? getters.jwtData.sub : null,
     jwtIssuer: (state, getters) => getters.jwtData ? getters.jwtData.iss : null,
-    userId: state => state.userId
+    userId: state => state.userId,
+    project: state => state.projectId
   },
   mutations: {
     setJWT (state, jwt) {
@@ -23,16 +25,28 @@ export default new Vuex.Store({
     },
     setUserId (state, id) {
       state.userId = id
-      console.log('id')
     },
     setProjects (state, projectArr) {
       state.projects = projectArr
+    },
+    addProject(state, projectObj) {
+      state.projects.push(projectObj)
+    },
+    setCurrentProject (state, projectId) {
+      state.projectId = projectId
     }
   },
   actions: {
     loginInit ({ commit }, id, jwt) {
       commit('setJWT', jwt)
       commit('setUserId', id)
+    },
+    logout ({ commit }) {
+      commit('setJWT', '')
+      commit('setUserId', -1)
+      commit('setProjects', [])
+      commit('setCurrentProject', -1)
+      console.log('called logout')
     }
   }
 })

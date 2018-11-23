@@ -1,12 +1,16 @@
 <template>
   <button>
+    <font-awesome-icon :icon="icon" class="margin-right"/>
     <slot></slot>
   </button>
 </template>
 
 <script>
 export default {
-  name: 'IconButtonDark'
+  name: 'IconButtonDark',
+  props: {
+    icon: String
+  }
 }
 </script>
 
@@ -23,5 +27,9 @@ export default {
     &:hover {
       background: darken($dark, 5%);
     }
+  }
+
+  .margin-right {
+    margin-right: 0.8em;
   }
 </style>

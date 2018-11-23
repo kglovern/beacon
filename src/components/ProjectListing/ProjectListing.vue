@@ -10,7 +10,7 @@
           </tr>
           <tr>
             <th># of Frames</th>
-            <td>-</td>
+            <td>{{this.$vnode.key}}</td>
           </tr>
           <tr>
             <th>Role</th>
@@ -20,7 +20,10 @@
       </table>
     </div>
     <transition name="slide-fade">
-      <div v-show="hovered" class="open">Open</div>
+      <button @click="openSpecificProject" v-show="hovered" class="open">
+        <font-awesome-icon icon="external-link-square-alt" />
+        Open
+      </button>
     </transition>
   </div>
 </template>
@@ -35,9 +38,14 @@ export default {
   },
   props: {
     name: String,
-    lastModified: Date,
+    lastModified: String,
     frames: Number,
     role: Number
+  },
+  methods: {
+    openSpecificProject () {
+      this.$emit('opened-project', this.$vnode.key)
+    }
   },
   computed: {
     getRole () {
@@ -80,6 +88,7 @@ export default {
 }
 
 .open {
+  border: none;
   border-left: solid 1px $primary-alt;
   width: 15%;
   display: flex;

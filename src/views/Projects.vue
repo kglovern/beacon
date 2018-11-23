@@ -3,12 +3,13 @@
     <div class="project-container">
       <div class="full-width project-listings">
         <div class="create-container">
-          <project-hero />
-          <icon-button-dark>Create Project</icon-button-dark>
+          <project-hero/>
+          <icon-button-dark icon="plus-square">Create Project</icon-button-dark>
+          <icon-button-dark @click.native="logout" icon="sign-out-alt">Logout</icon-button-dark>
           <nested-search placeholder="Search Projects"/>
         </div>
         <div class="available-container">
-          <available-projects />
+          <available-projects/>
         </div>
       </div>
     </div>
@@ -28,6 +29,13 @@ export default {
     IconButtonDark,
     AvailableProjects,
     ProjectHero
+  },
+  methods: {
+    logout() {
+      console.log('LOGGING OUT')
+      this.$store.dispatch('logout')
+      this.$router.push('/')
+    }
   }
 }
 </script>
@@ -62,7 +70,6 @@ export default {
   display: flex;
   flex-direction: column;
   max-height: 50%;
-
 }
 
 .available-container {
@@ -72,5 +79,4 @@ export default {
   width: 30%;
   background: $dark;
 }
-
 </style>
