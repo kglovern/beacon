@@ -2,7 +2,6 @@
 <div class="bounding">
   <div class="rounded-container">
     <input :placeholder="placeholder" type="text">
-    <button>Search</button>
   </div>
 </div>
 </template>
@@ -16,10 +15,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 
 .bounding {
   padding: 1em 0.25em;
+  box-sizing: border-box;
 }
 .rounded-container {
   display: flex;
@@ -27,17 +27,7 @@ export default {
   background: $white;
   border-radius: 1em;
   width: 100%;
-}
-
-button {
-  display: flex;
-  flex-shrink: 0;
-  border: transparent;
-  background: $primary;
-  color: $dark;
-  border-radius: 1em;
-  padding: 0.3em 0.6em;
-  margin-right: 0.5em;
+  box-sizing: border-box;
 }
 
 input {
@@ -47,7 +37,7 @@ input {
   appearance: none;
   background: transparent;
   margin-right: 0.75em;
-  color: $dark;
+  color: $dark-light;
 
   &:focus {
     outline: none;
