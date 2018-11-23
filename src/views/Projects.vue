@@ -4,7 +4,8 @@
       <div class="full-width project-listings">
         <div class="create-container">
           <project-hero/>
-          <icon-button-dark icon="plus-square">Create Project</icon-button-dark>
+          <icon-button-dark icon="external-link-square-alt">Open Project</icon-button-dark>
+          <icon-button-dark icon="folder-plus">Create Project</icon-button-dark>
           <icon-button-dark @click.native="logout" icon="sign-out-alt">Logout</icon-button-dark>
           <nested-search placeholder="Search Projects"/>
         </div>

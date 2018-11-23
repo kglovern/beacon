@@ -19,9 +19,9 @@ export default {
 
 .bounding {
   padding: 1em 0.25em;
-  box-sizing: border-box;
 }
 .rounded-container {
+  margin-top: 0.2em;
   display: flex;
   align-items: center;
   background: $white;

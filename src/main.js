@@ -9,12 +9,12 @@ import '../node_modules/normalizecss/normalize.css'
 import '../node_modules/animate.css/animate.min.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlusSquare, faSignOutAlt, faExternalLinkSquareAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt, faExternalLinkSquareAlt, faFolderPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faPlusSquare)
 library.add(faSignOutAlt)
 library.add(faExternalLinkSquareAlt)
+library.add(faFolderPlus)
 /* Register global icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
