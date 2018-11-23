@@ -1,17 +1,21 @@
 <template>
   <div class="container">
     <h2>Recent projects</h2>
-    <project-listings/>
+    <!--<project-listings/>-->
+    <create-project-form />
+
   </div>
 </template>
 
 <script>
 import ProjectListings from '@/components/ProjectListing/ProjectListings.vue'
+import CreateProjectForm from '@/components/ProjectListing/CreateProjectForm.vue'
 
 export default {
   name: 'AvailableProjects',
   components: {
-    ProjectListings
+    ProjectListings,
+    CreateProjectForm
   }
 }
 </script>
