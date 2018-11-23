@@ -37,15 +37,16 @@ export default {
 <style lang="scss">
 
 #projects-container {
+  flex-grow: 1;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   overflow-y: scroll;
-  height: 100%;
   max-width: 85vw;
-  height: 100%;
+  height: 2vh;
   margin-top: 10px;
+  margin-bottom: 5px;
   padding: 2em;
 }
 .style-1::-webkit-scrollbar-track

@@ -11,7 +11,7 @@
       </div>
       <button type="submit" class="login" v-on:click="login()">Sign in</button>
       <div class="recovery">
-        <a>Forgot your username/password?</a>
+        <div v-on:click="dummy()">Forgot your username/password?</div>
       </div>
     </form>
   </div>

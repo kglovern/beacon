@@ -43,12 +43,17 @@ export default {
   width: 25%;
   padding: 2em;
   padding-left: 2.5em;
+  h1 {
+    display: inline;
+  }
 }
 #project-search-container {
   margin: auto;
   padding-left: 2em;
   height: 100vh;
   justify-content: space-between;
+  display: flex;
+  flex-direction: column;
 }
 input:focus {
   outline: none;

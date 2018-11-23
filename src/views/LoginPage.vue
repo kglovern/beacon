@@ -1,16 +1,32 @@
 <template>
   <div id="login-screen">
     <LoginHome />
+    <forgot-creds-modal @abc='showForgot()' @forgotCancelled='hideForgot()' v-show="forgotCreds"/>
   </div>
 </template>
 
 <script>
 import LoginHome from '@/components/LoginHome.vue'
+import ForgotCredsModal from '@/components/Modal/ForgotCredsModal.vue'
 
 export default {
   name: 'HomePage',
   components: {
-    LoginHome
+    LoginHome,
+    ForgotCredsModal
+  },
+  data: function () {
+    return {
+      forgotCreds: false
+    }
+  },
+  methods: {
+    hideForgot: function () {
+      this.forgotCreds = false
+    },
+    showForgot: function () {
+      this.forgotCreds = true
+    }
   }
 }
 </script>

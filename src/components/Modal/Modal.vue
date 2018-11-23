@@ -24,7 +24,7 @@ export default {
   flex-grow: 1;
   position: relative;
   min-width: 30vw;
-  height: 50vh;
+  // height: 50vh;
   z-index: 101;
   background: $dark-light;
   border-radius: 10px;

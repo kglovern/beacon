@@ -42,6 +42,10 @@ export default {
   width: 50%;
 }
 
+#forgot-creds-modal {
+  display: block;
+}
+
 .form {
   padding: 0em 2em;
   width: 60%;
