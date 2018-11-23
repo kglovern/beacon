@@ -14,23 +14,23 @@ export default {
       assets: [
         {
           id: '1',
-          name: 'Project 1.jpg'
+          name: 'Asset 1'
         },
         {
           id: '2',
-          name: 'My cool Project.jpg'
+          name: 'Asset 2'
         },
         {
           id: '3',
-          name: 'Hurray.jpg'
+          name: 'Asset 3'
         },
         {
           id: '4',
-          name: 'Hurray.jpg'
+          name: 'Asset 4'
         },
         {
           id: '5',
-          name: 'Hurray.jpg'
+          name: 'Asset 5'
         }
       ]
     }
@@ -46,10 +46,9 @@ export default {
 <style lang="scss">
 #a-wind {
   background: $white;
-  width: 95%;
+  width: 99%;
   max-height: 100px;
   overflow-y: scroll;
   color: black;
 }
-
 </style>
