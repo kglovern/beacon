@@ -1,5 +1,7 @@
 <template>
   <div id="this">
+    <button>Upload</button>
+    <br><br>
     Local
     <asset-window> </asset-window>
     <br>
@@ -23,6 +25,9 @@ export default {
 
 <style>
 #this {
-  padding: 1.2em 1.2em;
+  padding: 1.1em 1.1em;
+}
+button {
+  float: right;
 }
 </style>
