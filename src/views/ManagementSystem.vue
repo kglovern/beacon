@@ -9,16 +9,19 @@
       </div>
     </div>
   </div>
+  <add-asset-modal/>
 </div>
 </template>
 
 <script>
 import ManagementMenu from '@/components/ManagementMenu/ManagementMenu.vue'
+import AddAssetModal from '@/components/Modal/AddAssetModal.vue'
 
 export default {
   name: 'ManagementSystem',
   components: {
-    ManagementMenu
+    ManagementMenu,
+    AddAssetModal
   }
 }
 </script>
