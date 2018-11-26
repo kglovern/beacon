@@ -2,7 +2,7 @@
   <transition name="auth">
     <div v-bind:class="{'auth': loginFailed}" id="login-container">
       <LoginHomeHero />
-      <LoginForm @no-auth="toggleFailAnimation"/>
+      <LoginForm @forgotEnabled="$emit('forgotEnabled', 'true')" @no-auth="toggleFailAnimation"/>
     </div>
   </transition>
 </template>

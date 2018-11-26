@@ -1,7 +1,7 @@
 <template>
   <div id="login-screen">
-    <LoginHome />
-    <forgot-creds-modal @abc='showForgot()' @forgotCancelled='hideForgot()' v-show="forgotCreds"/>
+    <LoginHome @forgotEnabled='showForgot' />
+    <forgot-creds-modal @forgotCancelled='hideForgot' v-show="forgotCreds"/>
   </div>
 </template>
 
