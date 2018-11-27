@@ -11,7 +11,7 @@
       </div>
       <button type="submit" class="login" v-on:click="login()">Sign in</button>
       <div class="recovery">
-        <div v-on:click="dummy()">Forgot your username/password?</div>
+        <a v-on:click="$emit('forgotEnabled', 'true')">Forgot your username/password?</a>
       </div>
     </form>
   </div>
@@ -108,6 +108,9 @@ form {
     color: $highlight;
     font-size: 1em;
     width: 100%;
+  }
+  a:hover {
+    cursor: pointer;
   }
 }
 

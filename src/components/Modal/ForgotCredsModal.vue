@@ -7,15 +7,15 @@
           <p>* Email sent!</p>
           <p>If your email address exists in the system, you should receive an email with further instructions.</p>
         </Alert>
-        <form id="forgot-creds-form">
+        <form id="forgot-creds-form" v-on:submit="sendEmail(); $event.preventDefault()">
           <div>Please Enter Your Email:</div>
           <div id="input-email">
             <input type="text">
           </div>
         </form>
         <div id="project-action">
-          <button id="cancel-project" v-on:click="$emit('forgotCancelled', 'true')">Cancel</button>
-          <button id="submit-project" v-on:click="sendEmail()">Submit</button>
+          <button class="credsAction" id="cancel-project" v-on:click="$emit('forgotCancelled', 'true'); resetEmail();">Cancel</button>
+          <button class="credsAction" id="submit-project" v-on:click="sendEmail()">Submit</button>
         </div>
       </div>
     </modal>
@@ -42,6 +42,12 @@ export default {
   methods: {
     sendEmail: function () {
       this.emailSubmitted = true
+      setTimeout(() => {
+        this.$data.emailSubmitted = false
+      }, 4000)
+    },
+    resetEmail: function () {
+      this.emailSubmitted = false
     }
   }
 }
@@ -72,6 +78,7 @@ export default {
     }
     #input-email {
       display: flex;
+      color:black;
     }
   }
   #forgot-creds-form {
@@ -97,6 +104,17 @@ export default {
     margin: auto;
     width: 110px;
     bottom: 0;
+  }
+  .credsAction {
+    padding: 0.5em 2em;
+    color: $primary;
+    border: solid 1px $primary;
+    background: $white;
+    border-radius: 2em;
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
   }
 }
 </style>
