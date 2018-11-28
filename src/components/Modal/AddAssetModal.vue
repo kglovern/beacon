@@ -28,7 +28,7 @@
           </div>
         </form>
         <div id="asset-action">
-          <button class="button" id="cancel-asset">Cancel</button>
+          <button @click="$emit('hideAssetForm', 'true')" class="button" id="cancel-asset">Cancel</button>
           <button class="button" id="submit-asset">Submit</button>
         </div>
       </div>

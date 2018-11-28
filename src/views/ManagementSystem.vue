@@ -1,7 +1,7 @@
 
 <template>
 <div class="full-size manage">
-  <management-menu />
+  <management-menu @showAssetForm="showAssetModal" />
   <div id="main" class="full-size">
     <div id="edit-area">
       <div id="canvas">
@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-  <add-asset-modal/>
+  <add-asset-modal @hideAssetForm="hideAssetModal" v-show="showingAssetModal"/>
 </div>
 </template>
 
@@ -22,6 +22,19 @@ export default {
   components: {
     ManagementMenu,
     AddAssetModal
+  },
+  data: function () {
+    return {
+      showingAssetModal: false
+    }
+  },
+  methods: {
+    hideAssetModal: function () {
+      this.showingAssetModal = false
+    },
+    showAssetModal: function () {
+      this.showingAssetModal = true
+    }
   }
 }
 </script>

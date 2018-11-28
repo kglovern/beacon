@@ -8,7 +8,7 @@
         <management-menu-item>View Statistics</management-menu-item>
       </management-menu-category>
       <management-menu-category name="Assets">
-        <asset-menu />
+        <asset-menu @showAssetForm="$emit('showAssetForm', 'true')" />
       </management-menu-category>
       <management-menu-category name="Text and Shapes">
         SHAPE MENU COMPONENT GOES HERE

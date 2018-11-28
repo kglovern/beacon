@@ -1,7 +1,7 @@
 <template>
   <div>
     <nested-search placeholder="Asset Name"/>
-    <asset-listings />
+    <asset-listings @showAssetForm="$emit('showAssetForm', 'true')" />
   </div>
 </template>
 

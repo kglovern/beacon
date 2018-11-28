@@ -1,6 +1,6 @@
 <template>
   <div id="this">
-    <button>Upload</button>
+    <button @click="$emit('showAssetForm', 'true')">Upload</button>
     <br><br>
     Local
     <asset-window> </asset-window>
