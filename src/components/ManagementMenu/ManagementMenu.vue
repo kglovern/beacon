@@ -18,7 +18,7 @@
       </management-menu-category>
     </div>
     <div id="bottom-menu">
-      <a href="">I'm probably a logout button</a>
+      <logout-button />
     </div>
   </div>
 </template>
@@ -28,6 +28,7 @@ import ManagementMenuHeader from '@/components/ManagementMenu/ManagementMenuHead
 import ManagementMenuCategory from '@/components/ManagementMenu/ManagementMenuCategory.vue'
 import ManagementMenuItem from '@/components/ManagementMenu/ManagementMenuItem.vue'
 import AssetMenu from '@/components/AssetMenu/AssetMenu.vue'
+import LogoutButton from '@/components/ManagementMenu/LogoutButton.vue'
 
 export default {
   name: 'ManagementMenu',
@@ -35,7 +36,8 @@ export default {
     ManagementMenuHeader,
     ManagementMenuCategory,
     ManagementMenuItem,
-    AssetMenu
+    AssetMenu,
+    LogoutButton
   }
 }
 </script>

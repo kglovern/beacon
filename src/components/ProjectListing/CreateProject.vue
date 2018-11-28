@@ -1,5 +1,6 @@
 <template>
   <form id="new-project-form">
+    <h1 class="sub-header">Create Project</h1>
     <div id="project-name">
       <label>Project Name</label>
       <input type="text" name="name" placeholder="Enter your new project name!">
@@ -17,8 +18,8 @@
         </div>
       </div>
       <div class="actions">
-        <button id="submit-project">Submit</button>
-        <button id="cancel-project">Cancel</button>
+        <button id="submit-project">Create</button>
+        <button @click.prevent.stop="cancel" id="cancel-project">Cancel</button>
       </div>
     </div>
   </form>
@@ -26,11 +27,23 @@
 
 <script>
 export default {
-  name: 'CreateProjectForm'
+  name: 'CreateProject',
+  methods: {
+    cancel() {
+      this.$router.push('/projects')
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
+
+.sub-header {
+  color: $dark;
+  border-bottom: solid 1px $primary-alt;
+  margin-bottom: 1em;
+}
+
 form {
   padding: 1em;
   box-sizing: border-box;

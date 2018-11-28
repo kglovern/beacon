@@ -46,7 +46,6 @@ export default new Vuex.Store({
       commit('setUserId', -1)
       commit('setProjects', [])
       commit('setCurrentProject', -1)
-      console.log('called logout')
     }
   }
 })

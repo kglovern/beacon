@@ -1,4 +1,8 @@
 <template>
+  <div>
+    <div class="sub-header">
+      <h1>Open Existing Project</h1>
+    </div>
   <div class="container">
     <project-listing
       v-for="project in projects"
@@ -8,6 +12,7 @@
       :lastModified="project.updated_at"
       @opened-project="openProject"
     />
+  </div>
   </div>
 </template>
 
@@ -43,6 +48,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.sub-header {
+  color: $dark;
+  border-bottom: solid 1px $primary-alt;
+  margin: 1em;
+
+  h1 {
+    margin: 0;
+    color: $dark;
+  }
+}
 .container {
   width: 100%;
   color: $dark;

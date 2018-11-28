@@ -48,7 +48,9 @@ export default {
         .then(response => {
           if (response.data && response.data.token) {
             this.$store.dispatch('loginInit', response.data.id, response.data.token)
-            this.$router.push('/projects')
+              .then(() => {
+                this.$router.push('/projects')
+              })
           } else {
             this.$emit('no-auth')
             this.authFailed = true

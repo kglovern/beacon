@@ -67,6 +67,7 @@ export default {
   h3 {
     margin: 0.3em 0 0.5em 0;
     padding: 0 0 0 1em;
+    color: $primary;
   }
 
   table {
