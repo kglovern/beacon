@@ -9,8 +9,8 @@
             <td>{{lastModified | localDate}}</td>
           </tr>
           <tr>
-            <th># of Frames</th>
-            <td>{{this.$vnode.key}}</td>
+            <th>Size</th>
+            <td>{{height}} by {{width}}</td>
           </tr>
           <tr>
             <th>Role</th>
@@ -40,7 +40,9 @@ export default {
     name: String,
     lastModified: String,
     frames: Number,
-    role: Number
+    role: Number,
+    width: Number,
+    height: Number
   },
   methods: {
     openSpecificProject () {

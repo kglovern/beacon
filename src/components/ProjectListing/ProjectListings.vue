@@ -9,6 +9,8 @@
       :key="project.id"
       :name="project.name"
       :role="project.owner_id"
+      :width="project.width"
+      :height="project.height"
       :lastModified="project.updated_at"
       @opened-project="openProject"
     />
