@@ -2,7 +2,7 @@
   <div class="logout">
     <a @click="logout">
       <font-awesome-icon icon="sign-out-alt" />
-      Save and Logout
+      Close Project
     </a>
   </div>
 </template>
@@ -12,8 +12,7 @@ export default {
   name: 'LogoutButton',
   methods: {
     async logout() {
-      await this.$store.logout
-      this.$router.push('/')
+      this.$router.push('/projects')
     }
   }
 }

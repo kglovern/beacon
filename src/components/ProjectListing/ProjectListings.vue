@@ -34,7 +34,8 @@ export default {
   },
   methods: {
     async fetchProjects() {
-      const url = `user/${6}/projects`
+      const userId = this.$store.getters.userId
+      const url = `user/${userId}/projects`
       const results = await API.get(url)
       this.projects = results.data
     },
