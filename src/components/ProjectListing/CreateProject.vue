@@ -1,24 +1,26 @@
 <template>
   <form id="new-project-form">
     <h1 class="sub-header">Create Project</h1>
+    <alert v-if="createErr" alertType="danger">Error while creating a new project!</alert>
+    <alert v-if="createSuccess" alertType="ok">Project created successfully!</alert>
     <div id="project-name">
       <label>Project Name</label>
-      <input type="text" name="name" placeholder="Enter your new project name!">
+      <input v-model="projectName" type="text" name="name" placeholder="Enter your new project name!">
     </div>
     <div>
       <label>Display Resolution</label>
       <div id="project-resolution">
         <div class="half-res">
           <label for="width">Width (px)</label>
-          <input type="text" name="width" placeholder="1920">
+          <input v-model="width" type="text" name="width" placeholder="1920">
         </div>
         <div class="half-res">
           <label for="height">Height (px)</label>
-          <input type="text" name="height" placeholder="1080">
+          <input v-model="height" type="text" name="height" placeholder="1080">
         </div>
       </div>
       <div class="actions">
-        <button id="submit-project">Create</button>
+        <button @click.prevent.stop="createNewProject" id="submit-project">Create</button>
         <button @click.prevent.stop="cancel" id="cancel-project">Cancel</button>
       </div>
     </div>
@@ -26,11 +28,47 @@
 </template>
 
 <script>
+import { API } from '@/api'
+import Alert from '@/components/Alert.vue'
+
 export default {
   name: 'CreateProject',
+  components: {
+    Alert
+  },
+  data() {
+    return {
+      projectName: '',
+      width: 0,
+      height: 0,
+      createErr: false,
+      createSuccess: false
+    }
+  },
   methods: {
+    async createNewProject() {
+      try {
+        const project = await API.post('project', {
+          user_id: this.$store.getters.userId,
+          name: this.projectName,
+          width: this.width,
+          height: this.height
+        })
+        console.log(project)
+        this.createSuccess = true
+        setTimeout(() => {
+          this.$router.push('/projects')
+        }, 2000)
+      } catch (e) {
+        console.log(e)
+        this.alertErr()
+      }
+    },
     cancel() {
       this.$router.push('/projects')
+    },
+    alertErr() {
+      this.createErr = true
     }
   }
 }

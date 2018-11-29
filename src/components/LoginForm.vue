@@ -47,7 +47,7 @@ export default {
         })
         .then(response => {
           if (response.data && response.data.token) {
-            this.$store.dispatch('loginInit', response.data.id, response.data.token)
+            this.$store.dispatch('loginInit', response.data.userId, response.data.token)
               .then(() => {
                 this.$router.push('/projects')
               })
