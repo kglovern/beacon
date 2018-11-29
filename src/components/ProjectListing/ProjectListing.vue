@@ -51,7 +51,7 @@ export default {
   },
   computed: {
     getRole () {
-      return (this.role === 6) ? 'Owner' : 'Editor'
+      return (this.role === this.$store.getters.userId) ? 'Owner' : 'Editor'
     }
   }
 }
