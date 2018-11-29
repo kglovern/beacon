@@ -1,9 +1,12 @@
 <template>
   <div class="selector-container">
     <add-frame />
-    <frame-selector-tab isActive>1</frame-selector-tab>
-    <frame-selector-tab>2</frame-selector-tab>
-    <frame-selector-tab>3</frame-selector-tab>
+    <frame-selector-tab
+      v-for="frame in availableFrames"
+      :key="frame.id"
+    >
+      {{frame.position}}
+    </frame-selector-tab>
   </div>
 </template>
 
@@ -16,6 +19,11 @@ export default {
   components: {
     FrameSelectorTab,
     AddFrame
+  },
+  computed: {
+    availableFrames() {
+      return this.$store.getters.frames
+    }
   }
 }
 </script>

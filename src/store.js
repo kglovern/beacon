@@ -8,7 +8,10 @@ export default new Vuex.Store({
     projects: [],
     JWT: '',
     userId: -1,
-    projectId: -1
+    projectId: -1,
+    frames: [],
+    assets: [],
+    projectName: ''
   },
   getters: {
     JWT: state => localStorage.getItem('token') || '',
@@ -16,7 +19,8 @@ export default new Vuex.Store({
     jwtSubject: (state, getters) => getters.jwtData ? getters.jwtData.sub : null,
     jwtIssuer: (state, getters) => getters.jwtData ? getters.jwtData.iss : null,
     userId: state => state.userId,
-    project: state => state.projectId
+    project: state => state.projectId,
+    frames: state => state.frames
   },
   mutations: {
     setJWT (state, jwt) {
@@ -34,6 +38,15 @@ export default new Vuex.Store({
     },
     setCurrentProject (state, projectId) {
       state.projectId = projectId
+    },
+    setFrames(state, frameData) {
+      state.frames = frameData
+    },
+    setAssets(state, assetData) {
+      state.assets = assetData
+    },
+    setProjectName (state, name) {
+      state.projectName = name
     }
   },
   actions: {
@@ -46,6 +59,11 @@ export default new Vuex.Store({
       commit('setUserId', -1)
       commit('setProjects', [])
       commit('setCurrentProject', -1)
+    },
+    projectLoad({ commit }, data) {
+      commit('setFrames', data.frames)
+      commit('setAssets', data.assets)
+      commit('setProjectName', data.name)
     }
   }
 })

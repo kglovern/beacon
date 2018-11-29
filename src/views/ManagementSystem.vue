@@ -15,6 +15,7 @@
 import ManagementMenu from '@/components/ManagementMenu/ManagementMenu.vue'
 import AddAssetModal from '@/components/Modal/AddAssetModal.vue'
 import SignCanvas from '@/components/Canvas/SignCanvas.vue'
+import { API } from '@/api'
 
 export default {
   name: 'ManagementSystem',
@@ -35,6 +36,12 @@ export default {
     showAssetModal: function () {
       this.showingAssetModal = true
     }
+  },
+  created: async function () {
+    console.log('LOADING PROJECT: ' + this.$store.getters.project)
+    const url = `project/${this.$store.getters.project}/init`
+    const result = await API.get(url)
+    this.$store.dispatch('projectLoad', result.data)
   }
 }
 </script>
