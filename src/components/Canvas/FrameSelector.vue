@@ -3,7 +3,7 @@
     <add-frame />
     <frame-selector-tab
       v-for="frame in availableFrames"
-      :key="frame.id"
+      :key="frame.position"
     >
       {{frame.position}}
     </frame-selector-tab>

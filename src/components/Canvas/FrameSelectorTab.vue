@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="{ tab: true, active: isActive }" >
+  <div v-bind:class="{ tab: true, active: isActive ||fakeActive,  }" >
     <slot />
   </div>
 </template>
@@ -7,8 +7,18 @@
 <script>
 export default {
   name: 'FrameSelectorTab',
+  data () {
+    return {
+      fakeActive: false
+    }
+  },
   props: {
     isActive: Boolean
+  },
+  created: function() {
+    if (this.$vnode.key === 1) {
+      this.fakeActive = true
+    }
   }
 }
 </script>
