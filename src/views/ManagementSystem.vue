@@ -4,9 +4,7 @@
   <management-menu @showAssetForm="showAssetModal" />
   <div id="main" class="full-size">
     <div id="edit-area">
-      <div id="canvas">
-        Edit me
-      </div>
+      <sign-canvas/>
     </div>
   </div>
   <add-asset-modal @hideAssetForm="hideAssetModal" v-show="showingAssetModal"/>
@@ -16,12 +14,14 @@
 <script>
 import ManagementMenu from '@/components/ManagementMenu/ManagementMenu.vue'
 import AddAssetModal from '@/components/Modal/AddAssetModal.vue'
+import SignCanvas from '@/components/Canvas/SignCanvas.vue'
 
 export default {
   name: 'ManagementSystem',
   components: {
     ManagementMenu,
-    AddAssetModal
+    AddAssetModal,
+    SignCanvas
   },
   data: function () {
     return {

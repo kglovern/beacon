@@ -26,7 +26,7 @@ export default {
   padding: 1em;
   border-top: solid 1px $primary-alt-lighter;
   a {
-    color: $primary !important;
+    color: $primary-alt-lighter !important;
     &:hover {
       cursor: pointer;
     }
