@@ -1,7 +1,7 @@
 <template>
 <div class="bounding">
   <div class="rounded-container">
-    <input :placeholder="placeholder" type="text">
+    <input v-model="term" v-on:input="$emit('searching', term)" :placeholder="placeholder" type="text">
   </div>
 </div>
 </template>
@@ -9,6 +9,11 @@
 <script>
 export default {
   name: 'NestedSearch',
+  data() {
+    return {
+      term: ''
+    }
+  },
   props: {
     placeholder: String
   }

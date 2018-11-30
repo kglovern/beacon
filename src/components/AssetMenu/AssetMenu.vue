@@ -1,23 +1,26 @@
 <template>
-  <div>
-    <nested-search placeholder="Asset Name"/>
-    <asset-listings @showAssetForm="$emit('showAssetForm', 'true')" />
+  <div class="inner-asset-menu">
+    <add-asset-button @click.native="$emit('showAssetForm', 'true')"/>
+    <!-- <button @click="$emit('showAssetForm', 'true')">Add Asset</button> -->
+    <asset-listings />
   </div>
 </template>
 
 <script>
-import NestedSearch from '@/components/NestedSearch.vue'
 import AssetListings from '@/components/AssetMenu/AssetListings.vue'
+import AddAssetButton from '@/components/AssetMenu/AddAssetButton.vue'
 
 export default {
   name: 'AssetMenu',
   components: {
-    NestedSearch,
-    AssetListings
+    AssetListings,
+    AddAssetButton
   }
 }
 </script>
 
 <style>
-
+.inner-asset-menu {
+  padding-top: 1em;
+}
 </style>
