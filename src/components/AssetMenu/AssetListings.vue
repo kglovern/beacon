@@ -55,6 +55,11 @@ export default {
           id: '5',
           name: 'UoG Discount Flyer',
           is_shared: true
+        },
+        {
+          id: '6',
+          name: 'Go Go GRT!',
+          is_shared: true
         }
       ]
     }
