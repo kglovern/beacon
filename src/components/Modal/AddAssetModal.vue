@@ -5,7 +5,7 @@
         <form method="post" @submit.stop.prevent="uploadAsset" enctype="application/x-www-form-urlencoded" id="new-project-form" slot="modal-content">
           <div id="asset-file">
             <label for="file">File:</label>
-            <input name="file" type="file" value="Click Upload to select a file...">
+            <input name="file" @change="handleFileUpload" ref="file" type="file" value="Click Upload to select a file...">
           </div>
           <div id="asset-name">
             <label for="name">Asset Name:</label>
@@ -16,7 +16,7 @@
             <input type="checkbox" name="isShared" v-model="isShared">
           </div>
           <div id="asset-action">
-          <button @click="uploadAsset" class="button-primary" type="submit">Upload</button>
+          <button @click.stop.prevent="uploadAsset" class="button-primary" type="submit">Upload</button>
           <button @click.stop.prevent="$emit('hideAssetForm', 'true')" class="button">Cancel</button>
         </div>
         </form>
@@ -28,13 +28,15 @@
 <script>
 import Modal from '@/components/Modal/Modal.vue'
 import FullScreenModal from '@/components/Modal/FullScreenModal.vue'
+import { API } from '@/api'
 
 export default {
   name: 'AddAssetModal',
   data() {
     return {
       isShared: false,
-      name: ''
+      name: '',
+      file: ''
     }
   },
   components: {
@@ -42,8 +44,27 @@ export default {
     FullScreenModal
   },
   methods: {
+    async handleFileUpload() {
+      this.file = this.$refs.file.files[0]
+    },
     uploadAsset() {
-      console.log('nah')
+      let data = new FormData()
+      data.append('file', this.file)
+      data.append('project_id', this.$store.getters.project)
+      data.append('owner_id', this.$store.getters.userId)
+      data.append('name', this.name)
+      data.append('is_shared', this.isShared)
+      API.post('asset', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+        .then((res) => {
+          this.$emit('hideAssetForm', 'true')
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 }
